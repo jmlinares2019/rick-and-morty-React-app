@@ -1,7 +1,11 @@
 import imgRickMorty from "./img/rick-morty.png";
 import './App.css';
 import { useState } from "react";
-import Characters from "./components/Characters";
+import Character from "./components/Character";
+
+function createCharacther(character){
+  return <Character character={character} />
+}
 
 function App() {
   const [characters, setCharacters] = useState(null);
@@ -11,7 +15,6 @@ function App() {
     const characterApi = await api.json();
 
     setCharacters(characterApi.results);
-
     console.log(characters);
   }
 
@@ -19,10 +22,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="title">Rick & Morty</h1>
-        {characters ? // does characters contain data? 
-          <Characters characters={characters}/> // load Characters component passing characters as prop
-        : // else  
-          < /* load image and button into fragment (empty HTML brackets) */ >
+        {characters ?
+        <div className="characters">
+          <h2>Characters</h2>
+          <div className="container-characters">
+            {characters.map(createCharacther)}
+          </div>
+        </div>
+        :
+          <>
             <img src={imgRickMorty} alt="Rick & Morty" className='img-home' />
             <button onClick={reqApi} className='btn-search'>Search characters</button>
           </>
