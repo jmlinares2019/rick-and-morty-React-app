@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,7 +12,8 @@ body {
   font-family: "Rock Salt", cursive;
   font-weight: 400;
   font-style: normal;
-  margin-bottom: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .img-home {
@@ -64,6 +65,7 @@ body {
 }
 
 .character-container h3 {
+  font-family: "Segoe UI Black", sans-serif;
   margin: 10px 0;
 }
 
@@ -74,6 +76,15 @@ body {
   align-items: center;
   justify-content: flex-start;
   font-size: 16px;
+}
+
+.character-container .is-dead{
+  filter:grayscale(1);
+  transition: filter 1s;
+}
+
+.character-container .is-dead:hover{
+  filter:grayscale(0);
 }
 
 .character-container .dead,
@@ -146,6 +157,30 @@ body {
   }
 
   .character-container img {
-    width: 150px;
+    width: 200px;
   }
 }
+
+@media (min-width: 768px) {
+  .character-container div:last-child{
+    padding: 20px;
+  }
+}
+
+@media (min-width: 767.98px) and (max-width: 992px){
+  .character-container{
+    flex-direction: column;
+  }
+
+  .character-container div:first-child {
+    height: 200px;
+    width: 100%;
+  }
+
+  .character-container img{
+    border-radius: 10px 10px 0px 0px;
+  }
+  
+}
+
+
