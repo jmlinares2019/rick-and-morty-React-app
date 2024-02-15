@@ -11,7 +11,22 @@ function Character(props) {
         <img src={character.image} alt={character.name}></img>
       </div>
       <div>
-        <p>{character.name}</p>
+        <h3>{character.name}</h3>
+        <h6>
+          {character.status === "Alive" ?
+            < /* fragment */ >  
+              <span className="alive" />
+              Alive
+            </>
+          : 
+            < /* fragment */ >  
+              <span className="dead" />
+              Dead
+            </>
+          }
+        </h6>
+        <p><span className="text-grey">Episodes: </span>{character.episode.length}</p>
+        <p><span className="text-grey">Species: </span>{character.species}</p>
       </div>
       
     </div>
