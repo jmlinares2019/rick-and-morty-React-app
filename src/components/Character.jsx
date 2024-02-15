@@ -1,10 +1,12 @@
 // import React from 'react'
 
-function Characters(props) {
-  const character = props.character;
+function Character(props) {
+  // object destructuring, same as
+  // const character = props.character 
+  const { character } = props;
   console.log(character);
   return (
-    <div className="character-container" key={character.id}>
+    <div className="character-container">
       <div>
         <img src={character.image} alt={character.name}></img>
       </div>
@@ -16,4 +18,4 @@ function Characters(props) {
   )
 }
 
-export default Characters;
+export default Character;
