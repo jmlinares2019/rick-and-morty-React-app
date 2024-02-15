@@ -1,10 +1,8 @@
-// import React from 'react'
-
 function Character(props) {
   // object destructuring, same as
   // const character = props.character 
   const { character } = props;
-  console.log(character);
+  
   return (
     <div className="character-container">
       <div>
